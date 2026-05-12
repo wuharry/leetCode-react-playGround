@@ -1,4 +1,3 @@
-/* eslint-disable no-var */
 /**
  * Q6：var vs let 閉包行為差異
  *
@@ -16,10 +15,21 @@
  * createLetClosures()[0]() === 0  (各函式回傳各自的迭代值)
  */
 export function createVarClosures(): Array<() => number> {
-  throw new Error('Not implemented');
+  throw new Error("Not implemented");
 }
 
 export function createLetClosures(): Array<() => number> {
-  throw new Error('Not implemented');
+  throw new Error("Not implemented");
 }
-/* eslint-enable no-var */
+
+// const varFuncs = createVarClosures();
+// varFuncs[0](); // 觸發第一個閉包
+// varFuncs[1](); // 觸發第二個閉包
+// varFuncs[2](); // 觸發第三個閉包
+
+// console.log("-------------------");
+
+// const letFuncs = createLetClosures();
+// letFuncs[0]();
+// letFuncs[1]();
+// letFuncs[2]();
