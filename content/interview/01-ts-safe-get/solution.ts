@@ -14,9 +14,9 @@
  * - TS 從呼叫時的實際參數自動反推 T 和 K，呼叫端不需明示泛型
  */
 export function safeGet<T extends object, K extends keyof T>(
-  obj: T,
-  key: K,
-  fallback: T[K],
+  _obj: T,
+  _key: K,
+  _fallback: T[K],
 ): T[K] {
-  return obj[key] ?? fallback;
+  throw new Error('Not implemented');
 }

@@ -18,3 +18,13 @@ describe("TS Type: ExtractRouteParams", () => {
     expectTypeOf<Param>().toEqualTypeOf<{}>();
   });
 });
+
+// 答案：
+// export type ExtractRouteParams<T extends string> =
+//   T extends `${string}:${infer Param}/${infer Rest}`
+//     ? {
+//         [K in Param | keyof ExtractRouteParams<`/${Rest}`>]: string;
+//       }
+//     : T extends `${string}:${infer Param}`
+//       ? { [K in Param]: string }
+//       : {};
