@@ -12,11 +12,18 @@
  * - `K extends keyof T`：key 只能是 T 的合法屬性名（literal type）
  * - `T[K]`：型別索引，確保 fallback 和回傳值的型別與屬性完全一致
  * - TS 從呼叫時的實際參數自動反推 T 和 K，呼叫端不需明示泛型
+ *
+ * data: const user = { name: 'Harvey', age: 30 };
+ * const name = safeGet(user, "name", "unknown");
+ * console.log(name);
  */
-export function safeGet<T extends object, K extends keyof T>(
+
+export function safeGet<T extends object>(
   _obj: T,
-  _key: K,
-  _fallback: T[K],
-): T[K] {
-  throw new Error('Not implemented');
+
+  _key: string,
+
+  _fallback: unknown,
+): unknown {
+  throw new Error("Not implemented");
 }
