@@ -20,7 +20,7 @@ const api = createFetchClient({
 // 2. 設定攔截器 (Interceptors) - 測試是否能攔截請求與回應
 api.interceptors.request.use((config) => {
   console.log(
-    `\n🚀 [Request Interceptor] 發送請求: ${config.method} ${config.baseURL}${config.url}`
+    `\n🚀 [Request Interceptor] 發送請求: ${config.method} ${config.baseURL}${config.url}`,
   );
   return config;
 });
@@ -33,7 +33,7 @@ api.interceptors.response.use(
   (error) => {
     console.error("❌ [Response Error]", error);
     return Promise.reject(error);
-  }
+  },
 );
 
 // 3. 執行測試主程式
